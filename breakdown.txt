@@ -46,7 +46,7 @@ EPIC 3: CANDIDATE DASHBOARD
 -----------------------------------------------------
 
 STORY: Candidate Dashboard UI
-- TASK: Dashboard layout (Next.js + Tailwind)
+- TASK: Dashboard layout (Next.js + style component styling)
 - TASK: Profile completion status indicator
 - TASK: Skill verification status UI
 PRIORITY: HIGH

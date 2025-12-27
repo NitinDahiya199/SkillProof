@@ -123,7 +123,7 @@ TECH STACK
 
 Frontend
 - Next.js 14 (App Router)
-- Tailwind CSS
+- style component styling
 - Zustand / Redux
 - Ethers.js
 

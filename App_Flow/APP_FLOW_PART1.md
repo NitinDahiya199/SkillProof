@@ -29,7 +29,7 @@ This document describes the complete workflow of the SkillProof platform - an AI
 - **Employers**: Browse verified candidates, view AI reports, verify on-chain credentials
 
 ### System Architecture
-- **Frontend**: Next.js 14 (App Router), Tailwind CSS, Zustand/Redux, Ethers.js
+- **Frontend**: Next.js 14 (App Router), style component styling, Zustand/Redux, Ethers.js
 - **Backend**: Node.js/NestJS, PostgreSQL, Redis
 - **AI Service**: Python/FastAPI, LLM APIs, Docker sandbox
 - **Blockchain**: Solidity, Polygon/Base, ERC-721 NFTs
