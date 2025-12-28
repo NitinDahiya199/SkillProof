@@ -49,7 +49,7 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   size = 'md',
   color,
 }) => {
-  const spinnerColor = color || theme.colors.primary[600];
+  const spinnerColor = color || theme.colors.secondary.DEFAULT;
   return <Spinner size={size} color={spinnerColor} />;
 };
 

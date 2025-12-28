@@ -25,7 +25,7 @@ const StyledInput = styled.input<{ hasError?: boolean }>`
   padding: ${theme.spacing[3]} ${theme.spacing[4]};
   font-size: ${theme.fontSizes.base};
   border: 2px solid
-    ${(props) => (props.hasError ? theme.colors.error[500] : theme.colors.gray[300])};
+    ${(props) => (props.hasError ? theme.colors.error.DEFAULT : theme.colors.mediumGray)};
   border-radius: ${theme.borderRadius.lg};
   outline: none;
   transition: all 0.2s ease;
@@ -33,16 +33,16 @@ const StyledInput = styled.input<{ hasError?: boolean }>`
 
   &:focus {
     border-color: ${(props) =>
-      props.hasError ? theme.colors.error[500] : theme.colors.primary[500]};
+      props.hasError ? theme.colors.error.DEFAULT : theme.colors.secondary.DEFAULT};
     box-shadow: 0 0 0 3px
       ${(props) =>
         props.hasError
           ? `${theme.colors.error[100]}`
-          : `${theme.colors.primary[100]}`};
+          : `${theme.colors.secondary[100]}`};
   }
 
   &:disabled {
-    background-color: ${theme.colors.gray[100]};
+    background-color: ${theme.colors.lightGray};
     cursor: not-allowed;
     opacity: 0.6;
   }

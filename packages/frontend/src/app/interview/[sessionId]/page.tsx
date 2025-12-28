@@ -10,6 +10,7 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
 import { CodeEditor } from '@/components/interview/CodeEditor';
 import { QuestionDisplay } from '@/components/interview/QuestionDisplay';
 import { TestResults } from '@/components/interview/TestResults';
+import { CheckIcon } from '@/components/ui/svgs';
 import { theme } from '@/theme/theme';
 
 const Main = styled.main`
@@ -50,13 +51,13 @@ const TimerCard = styled(Card)`
 const Timer = styled.div`
   font-size: ${theme.fontSizes['4xl']};
   font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.primary[600]};
+  color: ${theme.colors.secondary.DEFAULT};
   margin: ${theme.spacing[4]} 0;
 `;
 
 const InstructionsCard = styled(Card)`
-  background-color: ${theme.colors.primary[50]};
-  border: 2px solid ${theme.colors.primary[200]};
+  background-color: ${theme.colors.secondary[50]};
+  border: 2px solid ${theme.colors.secondary[200]};
 `;
 
 const InstructionsTitle = styled.h3`
@@ -78,13 +79,9 @@ const InstructionItem = styled.li`
   padding-left: ${theme.spacing[6]};
   position: relative;
 
-  &::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: ${theme.colors.primary[600]};
-    font-weight: ${theme.fontWeights.bold};
-  }
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[2]};
 `;
 
 const EditorSection = styled.div`
@@ -190,10 +187,22 @@ export default function InterviewPage() {
             <InstructionsCard>
               <InstructionsTitle>Instructions</InstructionsTitle>
               <InstructionList>
-                <InstructionItem>Read the problem carefully</InstructionItem>
-                <InstructionItem>Write clean, efficient code</InstructionItem>
-                <InstructionItem>Test your solution before submitting</InstructionItem>
-                <InstructionItem>No external help or copy-paste allowed</InstructionItem>
+                <InstructionItem>
+                  <CheckIcon width={16} height={16} color={theme.colors.secondary.DEFAULT} />
+                  Read the problem carefully
+                </InstructionItem>
+                <InstructionItem>
+                  <CheckIcon width={16} height={16} color={theme.colors.secondary.DEFAULT} />
+                  Write clean, efficient code
+                </InstructionItem>
+                <InstructionItem>
+                  <CheckIcon width={16} height={16} color={theme.colors.secondary.DEFAULT} />
+                  Test your solution before submitting
+                </InstructionItem>
+                <InstructionItem>
+                  <CheckIcon width={16} height={16} color={theme.colors.secondary.DEFAULT} />
+                  No external help or copy-paste allowed
+                </InstructionItem>
               </InstructionList>
             </InstructionsCard>
 

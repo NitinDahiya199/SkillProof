@@ -38,9 +38,10 @@ const ScoreDisplay = styled.div<{ score: number }>`
   font-size: ${theme.fontSizes['6xl']};
   font-weight: ${theme.fontWeights.bold};
   color: ${(props) => {
-    if (props.score >= 80) return theme.colors.success[600];
-    if (props.score >= 60) return theme.colors.warning[600];
-    return theme.colors.error[600];
+    if (props.score >= 90) return theme.colors.success.DEFAULT;
+    if (props.score >= 70) return theme.colors.secondary.DEFAULT;
+    if (props.score >= 50) return theme.colors.warning.DEFAULT;
+    return theme.colors.error.DEFAULT;
   }};
   margin: ${theme.spacing[6]} 0;
 `;

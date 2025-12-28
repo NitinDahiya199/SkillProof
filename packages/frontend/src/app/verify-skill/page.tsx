@@ -69,7 +69,7 @@ const InfoItem = styled.li`
     content: '•';
     position: absolute;
     left: ${theme.spacing[2]};
-    color: ${theme.colors.primary[600]};
+    color: ${theme.colors.secondary.DEFAULT};
     font-weight: ${theme.fontWeights.bold};
   }
 `;

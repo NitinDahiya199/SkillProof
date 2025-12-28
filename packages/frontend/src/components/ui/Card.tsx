@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from '@/theme/theme';
 
 interface CardProps {
   children: React.ReactNode;
@@ -9,19 +8,22 @@ interface CardProps {
 }
 
 const StyledCard = styled.div<CardProps>`
-  background-color: ${theme.colors.white};
-  border-radius: ${theme.borderRadius.xl};
-  box-shadow: ${theme.shadows.md};
-  border: 1px solid ${theme.colors.gray[200]};
+  background-color: ${(props) => props.theme.colors.surface};
+  border-radius: ${(props) => props.theme.borderRadius.xl};
+  box-shadow: ${(props) => 
+    props.theme.mode === 'dark' 
+      ? '0 4px 6px rgba(0, 0, 0, 0.3)' 
+      : props.theme.shadows.md};
+  border: 1px solid ${(props) => props.theme.colors.border};
 
   ${(props) => {
     switch (props.padding) {
       case 'sm':
-        return `padding: ${theme.spacing[4]};`;
+        return `padding: ${props.theme.spacing[4]};`;
       case 'lg':
-        return `padding: ${theme.spacing[8]};`;
+        return `padding: ${props.theme.spacing[8]};`;
       default:
-        return `padding: ${theme.spacing[6]};`;
+        return `padding: ${props.theme.spacing[6]};`;
     }
   }}
 
@@ -31,7 +33,7 @@ const StyledCard = styled.div<CardProps>`
     transition: all 0.2s ease;
     cursor: pointer;
     &:hover {
-      box-shadow: ${theme.shadows.lg};
+      box-shadow: ${props.theme.shadows.lg};
       transform: translateY(-2px);
     }
   `}

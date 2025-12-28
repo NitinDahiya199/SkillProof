@@ -16,7 +16,7 @@ const Main = styled.main`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, ${theme.colors.primary[600]} 0%, ${theme.colors.secondary[600]} 100%);
+  background: ${theme.gradients.primary};
   color: ${theme.colors.white};
   padding: ${theme.spacing[20]} ${theme.spacing[6]};
   text-align: center;
@@ -64,7 +64,7 @@ const BlogCard = styled(Card)`
 const BlogImage = styled.div`
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, ${theme.colors.primary[400]}, ${theme.colors.secondary[400]});
+  background: ${theme.gradients.primary};
   display: flex;
   align-items: center;
   justify-content: center;

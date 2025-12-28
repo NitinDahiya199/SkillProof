@@ -13,7 +13,7 @@ const Main = styled.main`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, ${theme.colors.primary[600]} 0%, ${theme.colors.secondary[600]} 100%);
+  background: ${theme.gradients.primary};
   color: ${theme.colors.white};
   padding: ${theme.spacing[16]} ${theme.spacing[6]};
   text-align: center;

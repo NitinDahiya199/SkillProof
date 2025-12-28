@@ -55,16 +55,16 @@ const RoleButton = styled.button<{ active: boolean }>`
   flex: 1;
   padding: ${theme.spacing[4]};
   border: 2px solid
-    ${(props) => (props.active ? theme.colors.primary[600] : theme.colors.gray[300])};
+    ${(props) => (props.active ? theme.colors.secondary.DEFAULT : theme.colors.mediumGray)};
   border-radius: ${theme.borderRadius.lg};
-  background-color: ${(props) => (props.active ? theme.colors.primary[50] : theme.colors.white)};
-  color: ${(props) => (props.active ? theme.colors.primary[700] : theme.colors.gray[700])};
+  background-color: ${(props) => (props.active ? theme.colors.secondary[50] : theme.colors.white)};
+  color: ${(props) => (props.active ? theme.colors.secondary[700] : theme.colors.gray[700])};
   font-weight: ${theme.fontWeights.semibold};
   cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: ${theme.colors.primary[500]};
+    border-color: ${theme.colors.secondary.DEFAULT};
   }
 `;
 
@@ -96,7 +96,7 @@ const LoginLink = styled.div`
   color: ${theme.colors.gray[600]};
 
   a {
-    color: ${theme.colors.primary[600]};
+    color: ${theme.colors.secondary.DEFAULT};
     font-weight: ${theme.fontWeights.semibold};
     text-decoration: none;
 

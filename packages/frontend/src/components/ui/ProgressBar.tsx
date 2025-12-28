@@ -57,7 +57,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   size = 'md',
 }) => {
   const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
-  const progressColor = color || theme.colors.primary[600];
+  const progressColor = color || theme.colors.secondary.DEFAULT;
 
   return (
     <ProgressContainer size={size}>

@@ -67,8 +67,8 @@ const TextArea = styled.textarea`
   resize: vertical;
 
   &:focus {
-    border-color: ${theme.colors.primary[500]};
-    box-shadow: 0 0 0 3px ${theme.colors.primary[100]};
+    border-color: ${theme.colors.secondary.DEFAULT};
+    box-shadow: 0 0 0 3px ${theme.colors.secondary[100]};
   }
 `;
 

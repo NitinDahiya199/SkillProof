@@ -30,7 +30,7 @@ const ErrorContent = styled.div`
 const ErrorCode = styled.div`
   font-size: ${theme.fontSizes['6xl']};
   font-weight: ${theme.fontWeights.bold};
-  background: linear-gradient(135deg, ${theme.colors.primary[600]}, ${theme.colors.secondary[600]});
+  background: ${theme.gradients.primary};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

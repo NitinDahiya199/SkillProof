@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { theme } from '@/theme/theme';
 
 interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
@@ -18,31 +17,31 @@ const StyledButton = styled.button<ButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: ${theme.fontWeights.semibold};
-  border-radius: ${theme.borderRadius.lg};
+  font-weight: ${(props) => props.theme.fontWeights.semibold};
+  border-radius: ${(props) => props.theme.borderRadius.lg};
   transition: all 0.2s ease;
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   border: none;
   outline: none;
-  font-family: ${theme.fonts.sans.join(', ')};
+  font-family: ${(props) => props.theme.fonts.sans.join(', ')};
 
   /* Size variants */
   ${(props) => {
     switch (props.size) {
       case 'sm':
         return `
-          padding: ${theme.spacing[2]} ${theme.spacing[4]};
-          font-size: ${theme.fontSizes.sm};
+          padding: ${props.theme.spacing[2]} ${props.theme.spacing[4]};
+          font-size: ${props.theme.fontSizes.sm};
         `;
       case 'lg':
         return `
-          padding: ${theme.spacing[4]} ${theme.spacing[8]};
-          font-size: ${theme.fontSizes.lg};
+          padding: ${props.theme.spacing[4]} ${props.theme.spacing[8]};
+          font-size: ${props.theme.fontSizes.lg};
         `;
       default:
         return `
-          padding: ${theme.spacing[3]} ${theme.spacing[6]};
-          font-size: ${theme.fontSizes.base};
+          padding: ${props.theme.spacing[3]} ${props.theme.spacing[6]};
+          font-size: ${props.theme.fontSizes.base};
         `;
     }
   }}
@@ -54,8 +53,8 @@ const StyledButton = styled.button<ButtonProps>`
   ${(props) => {
     if (props.disabled) {
       return `
-        background-color: ${theme.colors.gray[300]};
-        color: ${theme.colors.gray[500]};
+        background-color: ${props.theme.colors.gray[300]};
+        color: ${props.theme.colors.gray[500]};
         opacity: 0.6;
       `;
     }
@@ -63,66 +62,70 @@ const StyledButton = styled.button<ButtonProps>`
     switch (props.variant) {
       case 'primary':
         return `
-          background-color: ${theme.colors.primary[600]};
-          color: ${theme.colors.white};
+          background-color: ${props.theme.colors.secondary.DEFAULT};
+          color: ${props.theme.colors.white};
           &:hover {
-            background-color: ${theme.colors.primary[700]};
+            background-color: ${props.theme.colors.secondary[600]};
           }
           &:active {
-            background-color: ${theme.colors.primary[800]};
+            background-color: ${props.theme.colors.secondary[700]};
           }
         `;
       case 'secondary':
         return `
-          background-color: ${theme.colors.secondary[600]};
-          color: ${theme.colors.white};
+          background-color: ${props.theme.colors.primary.DEFAULT};
+          color: ${props.theme.colors.white};
           &:hover {
-            background-color: ${theme.colors.secondary[700]};
+            background-color: ${props.theme.colors.primary[600]};
           }
           &:active {
-            background-color: ${theme.colors.secondary[800]};
+            background-color: ${props.theme.colors.primary[700]};
           }
         `;
       case 'outline':
         return `
           background-color: transparent;
-          color: ${theme.colors.primary[600]};
-          border: 2px solid ${theme.colors.primary[600]};
+          color: ${props.theme.colors.secondary.DEFAULT};
+          border: 2px solid ${props.theme.colors.secondary.DEFAULT};
           &:hover {
-            background-color: ${theme.colors.primary[50]};
+            background-color: ${props.theme.colors.secondary[50]};
           }
           &:active {
-            background-color: ${theme.colors.primary[100]};
+            background-color: ${props.theme.colors.secondary[100]};
           }
         `;
       case 'ghost':
         return `
           background-color: transparent;
-          color: ${theme.colors.gray[700]};
+          color: ${props.theme.colors.text.secondary};
           &:hover {
-            background-color: ${theme.colors.gray[100]};
+            background-color: ${props.theme.mode === 'dark' 
+              ? props.theme.colors.gray[200] 
+              : props.theme.colors.gray[100]};
           }
           &:active {
-            background-color: ${theme.colors.gray[200]};
+            background-color: ${props.theme.mode === 'dark' 
+              ? props.theme.colors.gray[300] 
+              : props.theme.colors.gray[200]};
           }
         `;
       case 'danger':
         return `
-          background-color: ${theme.colors.error[600]};
-          color: ${theme.colors.white};
+          background-color: ${props.theme.colors.error[600]};
+          color: ${props.theme.colors.white};
           &:hover {
-            background-color: ${theme.colors.error[700]};
+            background-color: ${props.theme.colors.error[700]};
           }
           &:active {
-            background-color: ${theme.colors.error[800]};
+            background-color: ${props.theme.colors.error[800]};
           }
         `;
       default:
         return `
-          background-color: ${theme.colors.primary[600]};
-          color: ${theme.colors.white};
+          background-color: ${props.theme.colors.primary[600]};
+          color: ${props.theme.colors.white};
           &:hover {
-            background-color: ${theme.colors.primary[700]};
+            background-color: ${props.theme.colors.primary[700]};
           }
         `;
     }
@@ -173,4 +176,3 @@ export const Button: React.FC<ButtonProps> = ({
     </StyledButton>
   );
 };
-

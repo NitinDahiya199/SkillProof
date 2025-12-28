@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme } from '@/theme/theme';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { BulletIcon } from '@/components/ui/svgs';
 
 interface QuestionDisplayProps {
   question: {
@@ -83,13 +84,9 @@ const ConstraintItem = styled.li`
   padding-left: ${theme.spacing[6]};
   position: relative;
 
-  &::before {
-    content: '•';
-    position: absolute;
-    left: ${theme.spacing[2]};
-    color: ${theme.colors.primary[600]};
-    font-weight: ${theme.fontWeights.bold};
-  }
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[2]};
 `;
 
 export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({ question }) => {
@@ -147,7 +144,10 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({ question }) =>
           <SectionTitle>Constraints</SectionTitle>
           <ConstraintList>
             {question.constraints.map((constraint, idx) => (
-              <ConstraintItem key={idx}>{constraint}</ConstraintItem>
+              <ConstraintItem key={idx}>
+                <BulletIcon width={6} height={6} color={theme.colors.secondary.DEFAULT} />
+                {constraint}
+              </ConstraintItem>
             ))}
           </ConstraintList>
         </Section>

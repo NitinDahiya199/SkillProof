@@ -16,7 +16,7 @@ const Main = styled.main`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, ${theme.colors.primary[600]} 0%, ${theme.colors.secondary[600]} 100%);
+  background: ${theme.gradients.primary};
   color: ${theme.colors.white};
   padding: ${theme.spacing[20]} ${theme.spacing[6]};
   text-align: center;
@@ -55,7 +55,7 @@ const PricingCard = styled(Card)<{ featured?: boolean }>`
   ${(props) =>
     props.featured &&
     `
-    border: 2px solid ${theme.colors.primary[500]};
+    border: 2px solid ${theme.colors.secondary.DEFAULT};
     transform: scale(1.05);
   `}
 `;
@@ -65,7 +65,7 @@ const FeaturedBadge = styled.div`
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, ${theme.colors.primary[500]}, ${theme.colors.secondary[500]});
+  background: ${theme.gradients.primary};
   color: ${theme.colors.white};
   padding: ${theme.spacing[2]} ${theme.spacing[6]};
   border-radius: ${theme.borderRadius.full};

@@ -15,7 +15,7 @@ const Main = styled.main`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, ${theme.colors.primary[600]} 0%, ${theme.colors.secondary[600]} 100%);
+  background: ${theme.gradients.primary};
   color: ${theme.colors.white};
   padding: ${theme.spacing[20]} ${theme.spacing[6]};
   text-align: center;
@@ -75,7 +75,7 @@ const FeatureCard = styled(Card)`
 const FeatureIcon = styled.div`
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, ${theme.colors.primary[500]}, ${theme.colors.secondary[500]});
+  background: ${theme.gradients.primary};
   border-radius: ${theme.borderRadius.xl};
   display: flex;
   align-items: center;

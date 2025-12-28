@@ -53,7 +53,7 @@ const StatCard = styled(Card)`
 const StatValue = styled.div`
   font-size: ${theme.fontSizes['4xl']};
   font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.primary[600]};
+  color: ${theme.colors.secondary.DEFAULT};
   margin-bottom: ${theme.spacing[2]};
 `;
 

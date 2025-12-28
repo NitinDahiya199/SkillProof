@@ -16,7 +16,7 @@ const Main = styled.main`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, ${theme.colors.primary[600]} 0%, ${theme.colors.secondary[600]} 100%);
+  background: ${theme.gradients.primary};
   color: ${theme.colors.white};
   padding: ${theme.spacing[20]} ${theme.spacing[6]};
   text-align: center;
@@ -155,7 +155,7 @@ export default function CareersPage() {
             <p>We're not currently hiring, but we'd love to hear from you!</p>
             <p style={{ marginTop: theme.spacing[4] }}>
               Send your resume to{' '}
-              <a href="mailto:careers@skillproof.io" style={{ color: theme.colors.primary[600] }}>
+              <a href="mailto:careers@skillproof.io" style={{ color: theme.colors.secondary.DEFAULT }}>
                 careers@skillproof.io
               </a>
             </p>

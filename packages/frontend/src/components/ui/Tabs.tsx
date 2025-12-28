@@ -30,16 +30,16 @@ const TabButton = styled.button<{ active: boolean }>`
   background: none;
   border: none;
   border-bottom: 3px solid
-    ${(props) => (props.active ? theme.colors.primary[600] : 'transparent')};
-  color: ${(props) => (props.active ? theme.colors.primary[600] : theme.colors.gray[600])};
+    ${(props) => (props.active ? theme.colors.secondary.DEFAULT : 'transparent')};
+  color: ${(props) => (props.active ? theme.colors.secondary.DEFAULT : theme.colors.gray[500])};
   font-weight: ${(props) => (props.active ? theme.fontWeights.semibold : theme.fontWeights.medium)};
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: ${theme.fontSizes.base};
 
   &:hover {
-    color: ${theme.colors.primary[600]};
-    background-color: ${theme.colors.primary[50]};
+    color: ${theme.colors.secondary.DEFAULT};
+    background-color: ${theme.colors.secondary[50]};
   }
 `;
 

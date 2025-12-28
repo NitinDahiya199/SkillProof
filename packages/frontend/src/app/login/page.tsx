@@ -72,7 +72,7 @@ const SignUpLink = styled.div`
   color: ${theme.colors.gray[600]};
 
   a {
-    color: ${theme.colors.primary[600]};
+    color: ${theme.colors.secondary.DEFAULT};
     font-weight: ${theme.fontWeights.semibold};
     text-decoration: none;
 

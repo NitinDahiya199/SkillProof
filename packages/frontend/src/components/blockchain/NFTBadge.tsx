@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { theme } from '@/theme/theme';
 import { Badge } from '@/components/ui/Badge';
+import { BlockchainIcon } from '@/components/ui/svgs';
 
 interface NFTBadgeProps {
   tokenId?: string;
@@ -16,10 +17,10 @@ const BadgeContainer = styled.div<{ verified: boolean; clickable: boolean }>`
   padding: ${theme.spacing[2]} ${theme.spacing[4]};
   background: ${(props) =>
     props.verified
-      ? `linear-gradient(135deg, ${theme.colors.primary[100]}, ${theme.colors.secondary[100]})`
-      : theme.colors.gray[100]};
+      ? `linear-gradient(135deg, ${theme.colors.blockchain[100]}, ${theme.colors.secondary[100]})`
+      : theme.colors.lightGray};
   border: 2px solid
-    ${(props) => (props.verified ? theme.colors.primary[300] : theme.colors.gray[300])};
+    ${(props) => (props.verified ? theme.colors.blockchain.DEFAULT : theme.colors.mediumGray)};
   border-radius: ${theme.borderRadius.full};
   cursor: ${(props) => (props.clickable ? 'pointer' : 'default')};
   transition: all 0.2s ease;
@@ -60,7 +61,9 @@ export const NFTBadge: React.FC<NFTBadgeProps> = ({
 
   return (
     <BadgeContainer verified={verified} clickable={!!onClick} onClick={onClick}>
-      <Icon>⛓️</Icon>
+      <Icon>
+        <BlockchainIcon width={16} height={16} color="currentColor" />
+      </Icon>
       <Text>Verified on {network}</Text>
       {tokenId && (
         <Text style={{ color: theme.colors.gray[600], fontSize: theme.fontSizes.xs }}>

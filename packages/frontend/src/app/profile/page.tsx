@@ -61,7 +61,7 @@ const CompletionTitle = styled.h3`
 const CompletionPercentage = styled.div`
   font-size: ${theme.fontSizes['2xl']};
   font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.primary[600]};
+  color: ${theme.colors.secondary.DEFAULT};
 `;
 
 const Section = styled(Card)`

@@ -64,7 +64,7 @@ const StatCard = styled(Card)`
 const StatValue = styled.div`
   font-size: ${theme.fontSizes['4xl']};
   font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.primary[600]};
+  color: ${theme.colors.secondary.DEFAULT};
   margin-bottom: ${theme.spacing[2]};
 `;
 
@@ -134,13 +134,15 @@ const SkillBadge = styled.span<{ score: number }>`
   font-size: ${theme.fontSizes.sm};
   font-weight: ${theme.fontWeights.medium};
   background-color: ${(props) => {
-    if (props.score >= 80) return theme.colors.success[100];
-    if (props.score >= 60) return theme.colors.warning[100];
+    if (props.score >= 90) return theme.colors.success[100];
+    if (props.score >= 70) return theme.colors.secondary[100];
+    if (props.score >= 50) return theme.colors.warning[100];
     return theme.colors.error[100];
   }};
   color: ${(props) => {
-    if (props.score >= 80) return theme.colors.success[700];
-    if (props.score >= 60) return theme.colors.warning[700];
+    if (props.score >= 90) return theme.colors.success[700];
+    if (props.score >= 70) return theme.colors.secondary[700];
+    if (props.score >= 50) return theme.colors.warning[700];
     return theme.colors.error[700];
   }};
 `;

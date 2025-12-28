@@ -14,8 +14,14 @@ body {
 }
 
 body {
-  background-color: #f9fafb;
-  color: #111827;
+  background-color: #F8F9FA;
+  color: #1A1A1A;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #0F172A;
+  color: #F1F5F9;
 }
 
 a {
@@ -33,11 +39,23 @@ a {
   background: #f1f1f1;
 }
 
+html.dark ::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
 }
 
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748B;
 }

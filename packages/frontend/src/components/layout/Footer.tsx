@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { theme } from '@/theme/theme';
 
 const FooterContainer = styled.footer`
-  background-color: ${theme.colors.gray[900]};
-  color: ${theme.colors.gray[300]};
-  padding: ${theme.spacing[16]} ${theme.spacing[6]};
-  margin-top: ${theme.spacing[20]};
+  background-color: ${(props) => props.theme.colors.gray[900]};
+  color: ${(props) => props.theme.colors.gray[300]};
+  padding: ${(props) => props.theme.spacing[16]} ${(props) => props.theme.spacing[6]};
+  margin-top: ${(props) => props.theme.spacing[20]};
 `;
 
 const FooterContent = styled.div`
@@ -14,40 +13,40 @@ const FooterContent = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: ${theme.spacing[12]};
+  gap: ${(props) => props.theme.spacing[12]};
 `;
 
 const FooterSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${theme.spacing[4]};
+  gap: ${(props) => props.theme.spacing[4]};
 `;
 
 const FooterTitle = styled.h3`
-  font-size: ${theme.fontSizes.lg};
-  font-weight: ${theme.fontWeights.semibold};
-  color: ${theme.colors.white};
-  margin-bottom: ${theme.spacing[2]};
+  font-size: ${(props) => props.theme.fontSizes.lg};
+  font-weight: ${(props) => props.theme.fontWeights.semibold};
+  color: ${(props) => props.theme.colors.white};
+  margin-bottom: ${(props) => props.theme.spacing[2]};
 `;
 
 const FooterLink = styled(Link)`
-  color: ${theme.colors.gray[400]};
+  color: ${(props) => props.theme.colors.gray[400]};
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: ${theme.colors.white};
+    color: ${(props) => props.theme.colors.white};
   }
 `;
 
 const Copyright = styled.div`
   max-width: 1280px;
-  margin: ${theme.spacing[12]} auto 0;
-  padding-top: ${theme.spacing[8]};
-  border-top: 1px solid ${theme.colors.gray[800]};
+  margin: ${(props) => props.theme.spacing[12]} auto 0;
+  padding-top: ${(props) => props.theme.spacing[8]};
+  border-top: 1px solid ${(props) => props.theme.colors.gray[800]};
   text-align: center;
-  color: ${theme.colors.gray[500]};
-  font-size: ${theme.fontSizes.sm};
+  color: ${(props) => props.theme.colors.gray[500]};
+  font-size: ${(props) => props.theme.fontSizes.sm};
 `;
 
 export const Footer: React.FC = () => {
